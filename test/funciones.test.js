@@ -1,4 +1,4 @@
-import {describe, it, expect} from 'vistest';
+import {describe, it, expect} from 'vitest';
 import {fibonacci} from '../src/funciones.js';
 
 describe('Función fibonacci', () => {
