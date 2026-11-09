@@ -9,15 +9,7 @@ export function fibonacci(n) {
 }
 
 export function esPinValido(pin) {
-  if (pin === null || pin === undefined) {
-    return false;
-  }
-
-  if (pin === '') {
-    return false;
-  }
-
-  if (pin.length !== 4 && pin.length !== 6) {
+  if (!pin || (pin.length !== 4 && pin.length !== 6)) {
     return false;
   }
 
