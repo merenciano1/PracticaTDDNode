@@ -1,5 +1,5 @@
 import {describe, it, expect} from 'vitest';
-import {fibonacci} from '../src/funciones.js';
+import {fibonacci, esPinValido} from '../src/funciones.js';
 
 describe('Función fibonacci', () => {
     it('Si n es menor o igual a 0 se lanzará una excepción RangeError', () => {
@@ -20,5 +20,28 @@ describe('Función fibonacci', () => {
         expect(fibonacci(4)).toBe(3);
         expect(fibonacci(5)).toBe(5);
         expect(fibonacci(6)).toBe(8);
+    });
+})
+
+describe('Función esPinValido', () => {
+    it('No debe ser null ni undefined', () => {
+        expect(esPinValido(null)).toBe(false);
+        expect(esPinValido(undefined)).toBe(false);
+    });
+    it('No debe estar vacío', () => {
+        expect(esPinValido(' ')).toBe(false);
+    });
+    it('Solo debe contener dígitos', () => {
+        expect(esPinValido('12ab')).toBe(false);
+        expect(esPinValido('abcd')).toBe(false);
+        expect(esPinValido(' 123')).toBe(false);
+    });
+    it('No pueden ser todos los números iguales', () => {
+        expect(esPinValido('1111')).toBe(false);
+        expect(esPinValido('222222')).toBe(false);
+    });
+    it('Está formado por dígitos diferentes y cumple con la longitud', () => {
+        expect(esPinValido('1234')).toBe(false);
+        expect(esPinValido('123456')).toBe(false);
     });
 })
