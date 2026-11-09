@@ -3,7 +3,7 @@ import {fibonacci} from '../src/funciones.js';
 
 describe('Función fibonacci', () => {
     it('Si n es menor o igual a 0 se lanzará una excepción RangeError', () => {
-        expect(fibonacci(-1)).toThrow(RangeError);
+        expect( () => fibonacci(-1)).toThrow(RangeError);
     });
 
     it('Si n es igual a 0 debe devolver 0', () => {
