@@ -41,7 +41,7 @@ describe('Función esPinValido', () => {
         expect(esPinValido('222222')).toBe(false);
     });
     it('Está formado por dígitos diferentes y cumple con la longitud', () => {
-        expect(esPinValido('1234')).toBe(false);
-        expect(esPinValido('123456')).toBe(false);
+        expect(esPinValido('1234')).toBe(true);
+        expect(esPinValido('123456')).toBe(true);
     });
 })
